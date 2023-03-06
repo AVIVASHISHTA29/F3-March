@@ -21,7 +21,7 @@
 
 // setTimeout(() => {
 //   console.log("Hi 1");
-// }, 3000);
+// }, 1000);
 
 // setTimeout(() => {
 //   console.log("Hi 2 ");
