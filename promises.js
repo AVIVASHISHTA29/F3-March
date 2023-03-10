@@ -28,9 +28,9 @@
 
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    // resolve({ data: ["image1", "image2", "image3"] });
-    reject("sorry we couldnt find the data");
-  }, 1000);
+    resolve("<h1>Hi Hello</h1>");
+    // reject("sorry we couldnt find the data");
+  }, 1500);
 });
 
 console.log("Pending State>>>", myPromise);
