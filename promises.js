@@ -33,15 +33,15 @@ const myPromise = new Promise((resolve, reject) => {
   }, 1000);
 });
 
-console.log(myPromise);
+console.log("Pending State>>>", myPromise);
 
 myPromise
-  .then((response) => {
-    console.log("Data>>", response);
-    console.log(myPromise);
+  .then((data) => {
+    console.log("Data>>", data);
+    // do something with the data
   })
   .catch((e) => {
-    console.log("MY ERROR", e);
+    console.log(e);
   });
 
 // resolve means -> return whatever is inside of the brackets () and change the state of promise from pending to fulfilled
