@@ -38,7 +38,18 @@ fetch("https://dummyjson.com/quotes")
         </div>
       `;
     });
-    document.getElementById("container").innerHTML = myHTML.join(" ");
+
+    var appendedHTML = "";
+    for (let i in quotes) {
+      appendedHTML += `
+        <div class='quote-box'>
+            <h2>${quotes[i].id}. ${quotes[i].author}</h2>
+            <p>${quotes[i].quote}</p>
+        </div>
+      `;
+    }
+
+    document.getElementById("container").innerHTML = appendedHTML;
   });
 
 console.log("still fetching Data...");
