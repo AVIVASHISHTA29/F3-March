@@ -46,3 +46,6 @@ myPromise
 
 // resolve means -> return whatever is inside of the brackets () and change the state of promise from pending to fulfilled
 //  reject means -> return whatever is inside of the brackets () and change the state of promise from pending to rejected
+
+// Person B -> Person A -> Shopkeeper -> Manufacturer of chocolates
+// Person B "THEN" PERSON A "THEN" SHOPKEEPER "THEN" MANUFACTURER

@@ -66,16 +66,16 @@ mainFnc(secondFnc);
 
 // greeting->takeOrder->giveFood->takePayment->Thankyou
 
-function greeting(takeOrder) {
+function greeting(callbackFnc) {
   console.log("Hi How are you?");
   // if greeting ==successful
-  takeOrder(giveFood);
+  callbackFnc(giveFood);
 }
 
-function takeOrder(giveFood) {
+function takeOrder(callbackFnc) {
   console.log("Taking Your Order...");
   // if order taken == successful
-  giveFood(takePayment, sorry);
+  callbackFnc(takePayment, sorry);
 }
 
 function giveFood(takePayment, sorry) {
