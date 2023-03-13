@@ -49,6 +49,7 @@ fetch("https://dummyjson.com/quotes")
       `;
     }
 
+    document.getElementById("container").innerHTML = myHTML.join("");
     document.getElementById("container").innerHTML = appendedHTML;
   });
 
