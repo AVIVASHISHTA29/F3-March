@@ -4,3 +4,7 @@
   border-radius: 2rem;
   margin: 5rem;
 }
+
+.quote-box h2 {
+  text-transform: capitalize;
+}
