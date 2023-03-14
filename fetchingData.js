@@ -29,6 +29,7 @@ fetch("https://dummyjson.com/quotes")
   .then((data) => {
     console.log("Data", data);
     const quotes = data.quotes;
+    // Problem statement was that we are receiving an array and we need to show that data on the screen using dom
     console.log("My Quotes", quotes);
     const myHTML = quotes.map((item) => {
       return `
@@ -49,8 +50,22 @@ fetch("https://dummyjson.com/quotes")
       `;
     }
 
-    document.getElementById("container").innerHTML = myHTML.join("");
+    // document.getElementById("container").innerHTML = myHTML.join("");
     document.getElementById("container").innerHTML = appendedHTML;
   });
 
 console.log("still fetching Data...");
+
+// Handling Errors:
+
+// fetch("https://dummyjson.com/quotess/1")
+//   .then((res) => {
+//     console.log("RES", res);
+//     if (res.ok) {
+//       return res.json();
+//     }
+//   })
+//   .then((data) => {
+//     console.log("Data", data);
+//   })
+//   .catch((e) => console.log("ERROR", e));
