@@ -12,6 +12,9 @@ function myPromise() {
 
 // Create a function to handle this promises
 
+// Async keyword - allows me to declare an asynchronous function (the code execution will stop if we use the keyword await)
+// Await - handling the promise (or waiting for it to not remain pending and change its state from pending... to fulfilled or rejected.)
+
 async function handlePromise() {
   // To Handle the promise
   console.log("Handling the promise...", new Date());
