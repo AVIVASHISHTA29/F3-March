@@ -52,10 +52,13 @@ class User {
     this.username = myUsername;
     this.password = myPassword;
   }
+  getName() {
+    return "My Name is - " + this.name;
+  }
 }
 
-var user3 = new User("Avi", "avi@gmail.com", "9999", "avi_", "jshsjh");
-console.log(user3);
+var user3 = new User("avi", "avi@gmail.com", "9999", "avi_", "jshsjh");
+console.log(user3.getName());
 
 console.log("NAME", user1.name, user2.name, user3.name);
 
@@ -76,4 +79,4 @@ class Dog {
 
 var tommy = new Dog("German Shehpard", "brown", "100");
 console.log(tommy.breed, tommy.color, tommy.height);
-console.log(tommy.giveDetails());
+console.log(tommy);
