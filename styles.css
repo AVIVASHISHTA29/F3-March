@@ -49,3 +49,14 @@
   padding: 0.5rem;
   min-height: 400px;
 }
+
+table {
+  border: 1px solid #000;
+}
+
+table td,
+table th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 1rem;
+}

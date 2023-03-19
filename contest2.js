@@ -22,33 +22,62 @@ function promiseAPI3() {
   return fetchApi("https://dummyjson.com/todos", 3000);
 }
 
+// promiseAPI1()
+//   .then((data1) => {
+//     // show the data
+//     console.log(data1);
+//     const myHTML = data1.posts.map((post) => {
+//       return `
+//         <div class='post'>
+//             <h2>ID : ${post.id}</h2>
+//             <h2>Title : ${post.title}</h2>
+//         </div>
+//     `;
+//     });
+//     document.getElementById("posts").innerHTML =
+//       "<h1>Posts</h1><div class='posts-flex'>" + myHTML.join("") + "</div>";
+//     return promiseAPI2();
+//   })
+//   .then((data2) => {
+//     console.log(data2);
+//     const myHTML = data2.products.map((product) => {
+//       return `
+//             <div class='post'>
+//                 <h2>ID : ${product.id}</h2>
+//                 <h2>Title : ${product.title}</h2>
+//                 <img src='${product.images[0]}' width="100%"/>
+//             </div>
+//         `;
+//     });
+//     document.getElementById("products").innerHTML =
+//       "<h1>Products</h1><div class='posts-flex'>" + myHTML.join("") + "</div>";
+//   });
+
 promiseAPI1()
   .then((data1) => {
     // show the data
     console.log(data1);
     const myHTML = data1.posts.map((post) => {
       return `
-        <div class='post'>
-            <h2>ID : ${post.id}</h2>
-            <h2>Title : ${post.title}</h2>
-        </div>
+        <tr>
+            <td>${post.id}</td>
+            <td>${post.title}</td>
+        </tr>
     `;
     });
-    document.getElementById("posts").innerHTML =
-      "<h1>Posts</h1><div class='posts-flex'>" + myHTML.join("") + "</div>";
+    document.getElementById("posts-tbody").innerHTML = myHTML.join("");
     return promiseAPI2();
   })
   .then((data2) => {
     console.log(data2);
     const myHTML = data2.products.map((product) => {
       return `
-            <div class='post'>
-                <h2>ID : ${product.id}</h2>
-                <h2>Title : ${product.title}</h2>
-                <img src='${product.images[0]}' width="100%"/>
-            </div>
-        `;
+        <tr>
+            <td>${product.id}</td>
+            <td>${product.title}</td>
+            <td><img src='${product.images[0]}' height='100' width='100%' /></td>
+        </tr>
+    `;
     });
-    document.getElementById("products").innerHTML =
-      "<h1>Products</h1><div class='posts-flex'>" + myHTML.join("") + "</div>";
+    document.getElementById("products-tbody").innerHTML = myHTML.join("");
   });
