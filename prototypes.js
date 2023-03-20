@@ -49,6 +49,9 @@ const parent = {
   cookFood: function () {
     return "Cooks Native Food";
   },
+  __proto__: {
+    grandParents: "Grand Parents lived in 1900s",
+  },
 };
 
 const child = {
@@ -60,7 +63,7 @@ const child = {
 };
 
 console.log("Child", child);
-console.log(child.cookFood());
+console.log(child.grandParents);
 
 class Parent {
   age = "21";
