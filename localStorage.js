@@ -9,10 +9,18 @@ function login() {
   var emailValue = document.getElementById("input-email").value;
   var passwordValue = document.getElementById("input-password").value;
 
+  var userObj = {
+    email: emailValue,
+    password: passwordValue,
+  };
+
   //   Logic to save the data now
-  localStorage.setItem("email", emailValue);
-  localStorage.setItem("password", passwordValue);
-  window.location.href = "/profile.html";
+  localStorage.setItem("user", JSON.stringify(userObj));
+
+  //   localStorage.setItem("email", emailValue);
+  //   localStorage.setItem("password", passwordValue);
+
+  //   window.location.href = "/profile.html";
   //   alert("Email and password set!");
 }
 
@@ -21,6 +29,12 @@ document.getElementById("btn").addEventListener("click", login);
 console.log("LOCAL STORAGE EMAIL", localStorage.getItem("email"));
 console.log("LOCAL STORAGE PASSWORD", localStorage.getItem("password"));
 
-if (localStorage.getItem("password") && localStorage.getItem("email")) {
-  window.location.href = "/profile.html";
-}
+// if (localStorage.getItem("password") && localStorage.getItem("email")) {
+//   window.location.href = "/profile.html";
+// }
+
+// myUser = "{'email':'avivashishta@gmail.com',password:123456}";
+var myUser = JSON.parse(localStorage.getItem("user"));
+console.log(myUser);
+
+console.log(myUser.email);

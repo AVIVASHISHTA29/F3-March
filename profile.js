@@ -1,7 +1,13 @@
-if (!localStorage.getItem("password")) {
-  window.location.href = "/index.html";
+if (!localStorage.getItem("currentUser")) {
+  window.location.href = "/signup.html";
 }
 
-document.getElementById("email-h2").innerText = localStorage.getItem("email");
-document.getElementById("password-h2").innerText =
-  localStorage.getItem("password");
+function logout() {
+  //   localStorage.setItem("currentUser", "");
+  localStorage.removeItem("currentUser");
+}
+
+var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+document.getElementById("email-h2").innerText = currentUser.email;
+document.getElementById("password-h2").innerText = currentUser.password;
