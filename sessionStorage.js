@@ -10,3 +10,6 @@ console.log("Session Storage", sessionStorage.getItem("email"));
 // Session Storage automatically gets deleted once the tab is closed (or the session has ended)
 // Session Storage is there if i reload -> the data is there
 // New tab but with the same url - > again data is lost
+
+// localStorage.removeItem("email");
+// sessionStorage.removeItem("email");
