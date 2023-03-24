@@ -1,4 +1,4 @@
-// Problem statement was that I need to pass variables inside urls so that they can be accessed
+// Problem statement was that I need to pass variables inside urls so that they can be accessed by anyone
 
 console.log("Query params");
 var url_string = window.location.href;
