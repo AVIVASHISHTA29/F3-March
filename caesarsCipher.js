@@ -50,7 +50,7 @@ function encrypt(str) {
 // console.log(encrypt("ATTACK ON CASTLE AT 10"));
 
 // var alphabetStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-function rot13(str) {
+function rot13(str, key) {
   const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let ans = "";
   for (let i = 0; i < str.length; i++) {
@@ -59,7 +59,7 @@ function rot13(str) {
       ans += char;
     } else {
       const val = alpha.indexOf(str[i]);
-      const new_val = (val + 13) % 26;
+      const new_val = (val + key) % 26;
       ans += alpha[new_val];
     }
   }
@@ -67,4 +67,4 @@ function rot13(str) {
 }
 
 console.log("ATTACK ON CASTLE!");
-console.log(rot13("ATTACK ON CASTLE!"));
+console.log(rot13("ATTACK ON CASTLE!", 13));
