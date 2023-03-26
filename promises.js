@@ -36,8 +36,8 @@ const myPromise = new Promise((resolve, reject) => {
 console.log("Pending State>>>", myPromise);
 
 myPromise
-  .then((res) => {
-    console.log("res>>", res);
+  .then((data) => {
+    console.log("res>>", data);
     // do something with the data
   })
   .catch((e) => {
