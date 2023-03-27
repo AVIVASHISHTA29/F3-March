@@ -31,10 +31,32 @@ function mergeTwoSortedArrays(arr1, arr2) {
     arr3 = arr3.concat(arr1.slice(i));
   }
 
+  console.log("merged array", arr3);
   return arr3;
 }
 
-const myArr1 = [2, 5, 8, 10, 11];
-const myArr2 = [3, 7, 9, 12, 13];
+// const myArr1 = [3];
+// const myArr2 = [8];
 
-console.log("merging 2 arrays", mergeTwoSortedArrays(myArr1, myArr2));
+// console.log("my arr1", myArr1);
+// console.log("my arr2", myArr2);
+
+// console.log("merging 2 arrays", mergeTwoSortedArrays(myArr1, myArr2));
+
+function mergeSort(arr) {
+  // [9,6] -> [9]
+  if (arr.length <= 1) {
+    return arr;
+  } else {
+    // 9,6,3,8 -> // [9,6]
+    const leftArr = arr.slice(0, arr.length / 2); // [9,6] - > [9] ->[6,9]
+
+    const rightArr = arr.slice(arr.length / 2); // [3,8] -> [6]
+
+    return mergeTwoSortedArrays(mergeSort(leftArr), mergeSort(rightArr));
+  }
+}
+
+const myArr = [9, 6, 3, 5];
+console.log("unsorted", myArr);
+console.log("Merge Sort result", mergeSort(myArr));
